@@ -1,30 +1,3 @@
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-table td, table th {  
-  /* This section calls the slideInFromLeft animation we defined above */
-  animation: 20s ease-out 0s 1 slideInFromLeft;
-  
-  background: #333;
-  padding: 30px;
-
-  /* border: 1px solid black; */
-}
-
-/* Added for aesthetics */
-/* body {
-  margin: 0;font-family: "Segoe UI", Arial, Helvetica, Sans Serif;
-}
-a {
-  text-decoration: none; display: inline-block; margin-right: 10px; color:#fff;
-} */
-
 body{
   width: 100%;
 }
@@ -32,42 +5,18 @@ body{
 table {
   width:550px;
   height:350px;
-  /* border:1px solid black; */
-  /* border-collapse: collapse; */  
-  border-collapse: collapse;
+  border:1px solid black;
 }
-/* table td, table th {
-  border: 1px solid black;
-} */
-table tr:first-child td {
-  border-top: 0;
-  animation: 10s ease-out 5s 1 slideInFromLeft;
-}
-table tr:last-child td {
-  border-bottom: 0;
-  animation: 10s ease-out 5s 1 slideInFromLeft;
-}
-table tr td:first-child,
-table tr th:first-child {
-  border-left: 0;
-  animation: 10s ease-out 5s 1 slideInFromLeft;
-}
-table tr td:last-child,
-table tr th:last-child {
-  border-right: 0;
-  animation: 10s ease-out 5s 1 slideInFromLeft;
-}
-
+  
 table tr {
-  /* border:1px solid black; */
+  border:1px solid black;
   font:bold 46px Verdana; color:black;
 }
 
 table tr td {
   text-align:center;
   width:33.33%;
-  /* border:1px solid black; */
-  /* border-bottom:1px solid black; */
+  border:10px solid black;
 }
 
 table tr td:hover {
