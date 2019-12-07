@@ -24,9 +24,43 @@ body {
         justify-content: center;
         align-items: center;
         padding: 20px;
-  resize: both;
-  overflow: auto;
+         resize: both;
+         overflow: auto;
     }
+
+
+    .btn-primary {
+        color: #343a40;
+        background-color: #fff;
+        border-color: #343a40;
+    }
+    
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #343a40;
+        border-color: #343a40;
+    }
+
+    .btn-primary.focus, .btn-primary:focus {
+        box-shadow: 0 0 0 0.2rem rgba(128,128,128,.5);
+    }
+
+   
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #696969;
+        border-color: #696969;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0,0,0);
+    }
+
+    
+
+
+    
 
 #game{
     width: 320px;

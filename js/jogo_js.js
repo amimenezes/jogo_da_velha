@@ -37,7 +37,7 @@ function validarNomeJogador() {
     if (pegarNomeGame1.value != "") {
         // Validação - Confere se o nome contém mais que 3 caracteres
         if (pegarNomeGame1.value.length < 3) {
-            alert("Erro: Nome deve conter no mínimo 3 caracteres.");
+            bootbox.alert("Erro: Nome deve conter no mínimo 3 caracteres.");
             pegarNomeGame1.focus();
             
             return false;
@@ -45,7 +45,7 @@ function validarNomeJogador() {
 
         // Validação - regexNums - Regular Expressão que valida se o nome contém um números
         if (regexNums.test(pegarNomeGame1.value)) {
-            alert("Erro: Seu nome não deve conter números (0-9)!");
+            bootbox.alert("Erro: Seu nome não deve conter números (0-9)!");
             pegarNomeGame1.focus();
             
             return false;
@@ -53,14 +53,14 @@ function validarNomeJogador() {
 
         // Validação - regexLetras - Regular Expressão que valida se o nome contém somente letras Maíuscula ou Minúscula
         if (!regexLetras.test(pegarNomeGame1.value)) {
-            alert("Erro: Seu nome deve conter somente letras (A-Z) ou (a-z)!");
+            bootbox.alert("Erro: Seu nome deve conter somente letras (A-Z) ou (a-z)!");
             pegarNomeGame1.focus();
             
             return false;
         }
 
         if (pegarNomeGame2.value == "") {
-            alert("Erro: O nome do Jogador 2 não deve estar em branco!");
+            bootbox.alert("Erro: O nome do Jogador 2 não deve estar em branco!");
             pegarNomeGame2.focus();
             
             return false;
@@ -76,7 +76,7 @@ function validarNomeJogador() {
     if (pegarNomeGame2.value != "") {
         // Validação - Confere se o nome contém mais que 3 caracteres
         if (pegarNomeGame2.value.length < 3) {
-            alert("Erro: Nome deve conter no mínimo 3 caracteres.");
+            bootbox.alert("Erro: Nome deve conter no mínimo 3 caracteres.");
             pegarNomeGame2.focus();
             
             return false;
@@ -84,7 +84,7 @@ function validarNomeJogador() {
 
         // Validação - regexNums - Regular Expressão que valida se o nome contém um números
         if (regexNums.test(pegarNomeGame2.value)) {
-            alert("Erro: Seu nome não deve conter números (0-9)!");
+            bootbox.alert("Erro: Seu nome não deve conter números (0-9)!");
             pegarNomeGame2.focus();
             
             return false;
@@ -92,7 +92,7 @@ function validarNomeJogador() {
 
         // Validação - regexLetras - Regular Expressão que valida se o nome contém somente letras Maíuscula ou Minúscula
         if (!regexLetras.test(pegarNomeGame2.value)) {
-            alert("Erro: Seu nome deve conter somente letras (A-Z) ou (a-z)!");
+            bootbox.alert("Erro: Seu nome deve conter somente letras (A-Z) ou (a-z)!");
             pegarNomeGame2.focus();
             
             return false;
@@ -100,21 +100,21 @@ function validarNomeJogador() {
 
         /* Verifica se os nomes são iguais */
         if (pegarNomeGame1.value == pegarNomeGame2.value) {
-            alert("Erro: Os nomes devem ser diferentes!");
+            bootbox.alert("Erro: Os nomes devem ser diferentes!");
             pegarNomeGame1.focus();
             
             return false;
         }
 
         if (pegarNomeGame1.value == "") {
-            alert("Erro: O nome do Jogador 1 não deve estar em branco!");
+            bootbox.alert("Erro: O nome do Jogador 1 não deve estar em branco!");
             pegarNomeGame1.focus();
             
             return false;
         }
 
         // else {
-        //     alert("Bem-vindo(a) ao jogo. Divirta-se!");
+        //     bootbox.alert("Bem-vindo(a) ao jogo. Divirta-se!");
             
         //     return true;
         // }
@@ -139,7 +139,7 @@ initGame = function () {
 
     if (validarNomeJogador() == true) {    
 
-    alert("Bem-vindo(a) ao jogo. Divirta-se!");
+        bootbox.alert("Bem-vindo(a) ao jogo. Divirta-se!");
 
     var nomeJogador1 = document.getElementById('jogador1').value;
     var nomeJogador2 = document.getElementById('jogador2').value;
@@ -154,7 +154,7 @@ initGame = function () {
 
     }
     else {
-        alert("Você deve inserir um nome válido para começar a jogar.");
+        bootbox.alert("Você deve inserir um nome válido para começar a jogar.");
             
             return false;
     }
@@ -180,10 +180,12 @@ tabuleiroIsFilled = function () {
 allElementsInSomeLine = function () {
     for (var i = 0; i < 7; i += 3) {
         if (tabuleiro[i] == 'X' && tabuleiro[i + 1] == 'X' && tabuleiro[i + 2] == 'X') {
+            // bootbox.alert(jogador1.nome + ' Venceu!');
             alert(jogador1.nome + ' Venceu!');
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 1] == 'O' && tabuleiro[i + 2] == 'O') {
+            // bootbox.alert(jogador2.nome + ' Venceu!');
             alert(jogador2.nome + ' Venceu!');
             reset();
         }
@@ -194,10 +196,12 @@ allElementsInSomeLine = function () {
 allElementsInSomeColumn = function () {
     for (var i = 0; i < 3; i++) {
         if (tabuleiro[i] == 'X' && tabuleiro[i + 3] == 'X' && tabuleiro[i + 6] == 'X') {
+            // bootbox.alert(jogador1.nome + ' Venceu!');
             alert(jogador1.nome + ' Venceu!');
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 3] == 'O' && tabuleiro[i + 6] == 'O') {
+            // bootbox.alert(jogador2.nome + ' Venceu!');
             alert(jogador2.nome + ' Venceu!');
             reset();
         }
@@ -209,11 +213,13 @@ allElementsInSomeColumn = function () {
 allElementsInSomeDiagonal = function () {
     if ((tabuleiro[0] == 'X' && tabuleiro[4] == 'X' && tabuleiro[8] == 'X') ||
           (tabuleiro[2] == 'X' && tabuleiro[4] == 'X' && tabuleiro[6] == 'X')) {
-        alert(jogador1.nome + ' Venceu!');
-        reset();
+            // bootbox.alert(jogador1.nome + ' Venceu!');
+            alert(jogador1.nome + ' Venceu!');
+         reset();
     } else if ((tabuleiro[0] == 'O' && tabuleiro[4] == 'O' && tabuleiro[8] == 'O') ||
                 (tabuleiro[2] == 'O' && tabuleiro[4] == 'O' && tabuleiro[6] == 'O')) {
-        alert(jogador2.nome + ' Venceu!');
+                    // bootbox.alert(jogador2.nome + ' Venceu!');
+                    alert(jogador2.nome + ' Venceu!');
         reset();
     }
 }
@@ -229,13 +235,14 @@ setOnCeil = function (cel, pos) {
         (jogadorAtual.forma == 0) ? jogadorAtual = jogador2 : jogadorAtual = jogador1;
         setLabelJogadorAtual();
 
-    } else alert('Ops. Already marked value for this =/');
+    } else bootbox.alert('Ops! Esse campo já foi escolhido =/');
 
     allElementsInSomeLine();
     allElementsInSomeColumn();
     allElementsInSomeDiagonal();
 
     if (tabuleiroIsFilled()) {
+        // bootbox.alert('Não houve vencedor. Tente novamente!');
         alert('Não houve vencedor. Tente novamente!');
         reset();
     }
