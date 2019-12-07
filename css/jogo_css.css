@@ -1,39 +1,114 @@
-body{
-  width: 100%;
+html {
+    /*position: relative;*/
+    min-height: 100%;
+    color: #007dba;
+    text-rendering: optimizeLegibility;
+  
+}
+
+body {
+    /* Mesmo tamanho da margem que ser� fixada no Rodap� */
+    /*margin-bottom: 85px;*/
+    height: 100%;
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: both;
+    overflow: auto;
+}
+
+    body > .container {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+  resize: both;
+  overflow: auto;
+    }
+
+#game{
+    width: 320px;
+    height: 320px;
+}
+
+input {
+    cursor: pointer;
 }
 
 table {
-  width:550px;
-  height:350px;
-  border:1px solid black;
-}
-  
-table tr {
-  border:1px solid black;
-  font:bold 46px Verdana; color:black;
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+    max-height: 550px;
+    /*border: 1px solid black;*/
 }
 
-table tr td {
-  text-align:center;
-  width:33.33%;
-  border:10px solid black;
+    table tr {
+        /*background-color: red;*/
+        font: bold 46px Verdana;
+        /*color: white;*/
+    }
+
+        table tr td {
+            text-align: center;
+            width: 33.33%;
+            border-top: 0;
+        }
+
+            table tr td:hover {
+                cursor: pointer;
+            }
+
+/*Inicio borda table*/
+table {
+    border-collapse: collapse;
 }
 
-table tr td:hover {
-  cursor:pointer;
-}
+    table td, table th {
+        /*border: 1px solid black;*/
+        border: solid;
+        transition: border 3s;
+        /*transition-delay: 1s;*/
+    }
+
+        table td:hover, table th:hover {
+            border: 1px solid black;
+            border-top: 0;
+        }
+
+    table tr:first-child th {
+        border-top: 0;
+    }
+
+    table tr:last-child td {
+        border-bottom: 0;
+    }
+
+    table tr td:first-child,
+    table tr th:first-child {
+        border-left: 0;
+    }
+
+    table tr td:last-child,
+    table tr th:last-child {
+        border-right: 0;
+    }
+/*Fim Borda*/
 
 input[type=button] {
-  width:150px;
-  height:50px;
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:20px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 fieldset {
-  font-size:20;
-  font-weight:bold;
-  border:2px solid #95ADD5;
-  width: 300px; margin-bottom:25px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid blue;
+    width: 300px;
+    margin-bottom: 25px;
 }

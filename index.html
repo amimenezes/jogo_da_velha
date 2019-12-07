@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge; IE=11; IE=10; IE=9; IE=8" />
+    <meta name="Keywords" content="jogo,jogo da velha,javascript," />
+    <meta name="Author" content="Michele Menezes Luiz e Ueber" />
+
+    <title>Jodo da velha</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="css/jogo_css.css">
+    <script src="js/jogo_js.js"></script>
+</head>
+
+<body class="container-fluid">
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center m-4">
+
+            <form class="form-signin" action="/" method="post">
+                <h4 class="text-center"> Jogo da Velha </h4>
+                <div class="input-group">
+                    <div class="col">
+                        <label for="Jogador 1">
+                            <!--pattern="(?=^.{8,}$)((?=.*\d))(?![.\n])((?=.*[A-Z])|(?=.*[a-z])).*$"-->
+                            <!--<input class="form-control" type="text" id="jogador1" placeholder="Jogador 1..." pattern="[A-Z]" title="O nome deve ser com letras maiúsculas." onkeyup="this.value = this.value.mudarParaMaiuscula();" />-->
+                            <input class="form-control" type="text" id="jogador1" placeholder="Jogador 1..." pattern="[A-Z]" title="O nome deve ser com letras maiúsculas." onchange="javascript: validarNomeJogador();" />
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label for="Jogador 1">
+                            <!--<input class="form-control" type="text" id="jogador2" placeholder="Jogador 2..." onkeyup="this.value = this.value.mudarParaMaiuscula();" />-->
+                            <input class="form-control" type="text" id="jogador2" placeholder="Jogador 2..." onchange="javascript: validarNomeJogador();"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-dark btn-lg btn-block" value="Iniciar" onclick="javascript: initGame();">
+                            Iniciar
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="row justify-content-center m-4"><h3 id="jogadorAtual"> </h3></div>
+
+        <div class="row justify-content-center m-4">
+            <div id="game">
+                <table>
+                    <tr>
+                        <td onclick="javascript: setOnCeil(this, 0);"> &nbsp; </td>
+                        <td onclick="javascript: setOnCeil(this, 1);"> &nbsp; </td>
+                        <td onclick="javascript: setOnCeil(this, 2);"> &nbsp; </td>
+                    </tr>
+                    <tr>
+                        <td onclick="javascript: setOnCeil(this, 3);"> &nbsp; </td>
+                        <td onclick="javascript: setOnCeil(this, 4);"> &nbsp; </td>
+                        <td onclick="javascript: setOnCeil(this, 5);"> &nbsp; </td>
+                    </tr>
+                    <tr>
+                        <td onclick="javascript: setOnCeil(this, 6);"> &nbsp; </td>
+                        <td onclick="javascript: setOnCeil(this, 7);"> &nbsp; </td>
+                        <td onclick="javascript: setOnCeil(this, 8);"> &nbsp; </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
