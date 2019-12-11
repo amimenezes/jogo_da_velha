@@ -2,8 +2,7 @@ html {
     /*position: relative;*/
     min-height: 100%;
     color: #007dba;
-    text-rendering: optimizeLegibility;
-  
+    text-rendering: optimizeLegibility;    
 }
 
 body {
@@ -17,6 +16,11 @@ body {
     align-items: center;
     resize: both;
     overflow: auto;
+
+    /* background-image: url('../img/clouds.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
 }
 
     body > .container {
@@ -62,15 +66,13 @@ body {
     height: 320px;*/
     /*width: 280px;
     height: 280px;*/
-    min-width: 220px;
-    min-height: 220px;
+    /* min-width: 220px;
+    min-height: 220px; */
+    min-width: 300px;
+    min-height: 300px;
     max-width: 540px;
     max-height: 540px;
     /*transform: rotate(45deg);*/
-}
-
-#jogadorAtual{
-
 }
 
 .idVencendor{
@@ -205,4 +207,22 @@ fieldset {
     border: 2px solid blue;
     width: 300px;
     margin-bottom: 25px;
+}
+
+.bootbox-body{
+    display: flex;
+    justify-content: center !important;
+}
+
+.modal-header{
+    display: block;
+    justify-content: center !important;
+}
+
+.bootbox-close-button .close{
+    display: none;
+}
+
+.modal-title {
+    text-align: center;
 }

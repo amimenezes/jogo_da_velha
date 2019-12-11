@@ -1,7 +1,10 @@
 //DEIXA A DIV GAME ESCONDIDA
 window.onload = function () {
     document.getElementById('game').style.visibility = 'hidden',
-        document.getElementById('jogador1').focus()
+    document.getElementById('jogador1').focus(),
+    document.getElementById('botao2').style.display = 'none'
+    //document.getElementById('trofeu').style.display = 'none';
+    //document.getElementById('botao2').style.visibility = 'hidden'
 };
 
 //function mudarParaMaiuscula() {
@@ -168,8 +171,12 @@ initGame = function () {
         //Esconde os inputs 'jogador1' e 'jogador2'
         document.getElementById('jogador1').style.visibility = 'hidden';
         document.getElementById('jogador2').style.visibility = 'hidden';
+        //document.getElementById('botao').style.visibility = 'hidden';
+        document.getElementById('botao').style.display = 'none';
+        //document.getElementById('botao2').style.visibility = 'visible';
+        document.getElementById('botao2').style.display = 'block';
         //Modifica o nome do botão 'Iniciar'
-        document.getElementById('botao').innerHTML = "Reiniciar";
+        //document.getElementById('botao').innerHTML = "Reiniciar";
 
     }
     else {
@@ -201,7 +208,7 @@ tabuleiroIsFilled = function () {
     return preenchidos == tabuleiro.length;
 }
 
-var vencedor = false;
+//var vencedor = false;
 
 // Consertar bug do bootbox
 //https://stackoverflow.com/questions/26160800/stop-execution-of-js-on-bootbox-alert-opening
@@ -210,25 +217,44 @@ var vencedor = false;
 allElementsInSomeLine = function () {
     for (var i = 0; i < 7; i += 3) {
         if (tabuleiro[i] == 'X' && tabuleiro[i + 1] == 'X' && tabuleiro[i + 2] == 'X') {
-            //vencedor = true;
-            bootbox.alert(jogador1.nome + ' Venceu!', function () {
-                reset();
-                //window.location.reload();
+            
+            // bootbox.alert('<p>' + jogador1.nome + 'Venceu!</p><br/><img class="justify-content-center" src="img/trofeus.png"/>', function () {
+            //     // document.getElementById('trofeu').style.display = 'block';
+            //     className: 'rubberBand animated';
+            //     reset();
+            //     //window.location.reload();
+            // });
+            
+            bootbox.alert({
+                //title:'<div class="text-center">' + jogador1.nome + ' Venceu!</div>',
+                title: jogador1.nome + ' Venceu!',
+                message: '<img class="justify-content-center" src="img/trofeus.png"/>',
+                className: 'rubberBand animated',
+                callback: function () {
+                    reset();
+                },
             });
-            //setOnCeil();
-            //alert(jogador1.nome + ' Venceu!');
-            //reset();
+
             return true;
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 1] == 'O' && tabuleiro[i + 2] == 'O') {
-            //vencedor = true;
-            bootbox.alert(jogador2.nome + ' Venceu!', function () {
-                reset();
-                //window.location.reload();
+            
+            // bootbox.alert('<p>' + jogador2.nome + 'Venceu!</p><br/><img class="justify-content-center" src="img/trofeus.png"/>', function () {
+            //     // document.getElementById('trofeu').style.display = 'block';
+            //     className: 'rubberBand animated';
+            //     reset();
+            //     //window.location.reload();
+            // });
+
+            bootbox.alert({
+                //title:'<div class="text-center">' + jogador2.nome + ' Venceu!</div>',
+                title: jogador2.nome + ' Venceu!',
+                message: '<img class="justify-content-center" src="img/trofeus.png"/>',
+                className: 'rubberBand animated',
+                callback: function () {
+                    reset();
+                },
             });
-            //setOnCeil();
-            //alert(jogador2.nome + ' Venceu!');
-            //reset();
             return true;
         }
     }
@@ -237,26 +263,44 @@ allElementsInSomeLine = function () {
 /*Verifica a existência de ocorrências de um mesmo elemento(X ou O) nas colunas do tabuleiro, procurando um vencedor*/
 allElementsInSomeColumn = function () {
     for (var i = 0; i < 3; i++) {
-        if (tabuleiro[i] == 'X' && tabuleiro[i + 3] == 'X' && tabuleiro[i + 6] == 'X') {
-            //vencedor = true;
-            bootbox.alert(jogador1.nome + ' Venceu!', function () {
-                reset();
-                //window.location.reload();
+        if (tabuleiro[i] == 'X' && tabuleiro[i + 3] == 'X' && tabuleiro[i + 6] == 'X') {            
+            // bootbox.alert('<p>' + jogador1.nome + 'Venceu!</p><br/><img class="justify-content-center" src="img/trofeus.png"/>', function () {
+            //     //document.getElementById('trofeu').style.display = 'block';
+            //     className: 'rubberBand animated';
+            //     reset();
+            //     //window.location.reload();
+            // });
+            
+            bootbox.alert({
+                //title:'<div class="text-center">' + jogador1.nome + ' Venceu!</div>',
+                title: jogador1.nome + ' Venceu!',
+                message: '<img class="justify-content-center" src="img/trofeus.png"/>',
+                className: 'rubberBand animated',
+                callback: function () {
+                    reset();
+                },
             });
-            //setOnCeil();
-            //alert(jogador1.nome + ' Venceu!');
-            //reset();
+
             return true;
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 3] == 'O' && tabuleiro[i + 6] == 'O') {
-            //vencedor = true;
-            bootbox.alert(jogador2.nome + ' Venceu!', function () {
-                reset();
-                //window.location.reload();
+            
+            // bootbox.alert('<p>' + jogador2.nome + 'Venceu!</p><br/><img class="justify-content-center" src="img/trofeus.png"/>', function () {
+            //     //document.getElementById('trofeu').style.display = 'block';
+            //     className: 'rubberBand animated';
+            //     reset();
+            //     //window.location.reload();
+            // });
+            
+            bootbox.alert({
+                //title:'<div class="text-center">' + jogador2.nome + ' Venceu!</div>',
+                title: jogador2.nome + ' Venceu!',
+                message: '<img class="justify-content-center" src="img/trofeus.png"/>',
+                className: 'rubberBand animated',
+                callback: function () {
+                    reset();
+                },
             });
-            //setOnCeil();
-            //alert(jogador2.nome + ' Venceu!');
-            //reset();
             return true;
         }
     }
@@ -266,25 +310,43 @@ allElementsInSomeColumn = function () {
 allElementsInSomeDiagonal = function () {
     if ((tabuleiro[0] == 'X' && tabuleiro[4] == 'X' && tabuleiro[8] == 'X') ||
           (tabuleiro[2] == 'X' && tabuleiro[4] == 'X' && tabuleiro[6] == 'X')) {
-        //vencedor = true;
-        bootbox.alert(jogador1.nome + ' Venceu!', function () {
-            reset();
-            //window.location.reload();
+        
+        // bootbox.alert('<p>' + jogador1.nome + 'Venceu!</p><br/><img class="justify-content-center" src="img/trofeus.png"/>', function () {
+        //     //document.getElementById('trofeu').style.display = 'block';
+        //     className: 'rubberBand animated';
+        //     reset();
+        //     //window.location.reload();
+        // });
+        bootbox.alert({
+            //title:'<div class="text-center">' + jogador1.nome + ' Venceu!</div>',
+            title: jogador1.nome + ' Venceu!',
+            message: '<img class="justify-content-center" src="img/trofeus.png"/>',
+            className: 'rubberBand animated',
+            callback: function () {
+                reset();
+            },
         });
-        //setOnCeil();
-        //alert(jogador1.nome + ' Venceu!');
-        //reset();
+
         return true;
     } else if ((tabuleiro[0] == 'O' && tabuleiro[4] == 'O' && tabuleiro[8] == 'O') ||
                 (tabuleiro[2] == 'O' && tabuleiro[4] == 'O' && tabuleiro[6] == 'O')) {
-        //vencedor = true;
-        bootbox.alert(jogador2.nome + ' Venceu!', function () {
-            reset();
-            //window.location.reload();
+        
+        // bootbox.alert('<p class="text-center">' + jogador2.nome + 'Venceu!</p><br/><img class="justify-content-center" src="img/trofeus.png"/>' , function () {
+        //     className: 'rubberBand animated';
+        //     //document.getElementById('trofeu').style.display = 'block';
+        //     reset();
+        //     //window.location.reload();
+        // });
+
+        bootbox.alert({
+            // title:'<div class="text-center">' + jogador2.nome + ' Venceu!</div>',
+            title: jogador2.nome + ' Venceu!',
+            message: '<img class="justify-content-center" src="img/trofeus.png"/>',
+            className: 'rubberBand animated',
+            callback: function () {
+                reset();
+            },
         });
-        //setOnCeil();
-        //alert(jogador2.nome + ' Venceu!');
-        //reset();
         return true;
     }
 }
@@ -352,4 +414,8 @@ setOnCeil = function (cel, pos) {
         //alert('Não houve vencedor. Tente novamente!');
         //reset();
     }
+}
+
+function stopRotation() {
+    var tabela = document.getElementById('game');
 }
